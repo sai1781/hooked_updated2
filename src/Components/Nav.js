@@ -16,6 +16,7 @@ const Nav = _ => {
 
 
     useEffect(_ => {
+        if(clicked === true){
         if (value !== undefined) {
             (async _ => {
                 const response = await Req.get(`?s=${value}`);
@@ -27,10 +28,9 @@ const Nav = _ => {
                 }
             })()
          }
+        }
            //eslint-disable-next-line react-hooks/exhaustive-deps
-
-
-    }, [clicked, value])
+    }, [clicked])
 
 
     // console.log(clicked);
